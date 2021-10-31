@@ -26,14 +26,14 @@ services:
       - '222:22'
     depends_on:
       - db
-    db:
-      image: 'postgres:13'
-      restart: always
-      environment:
-        - POSTGRES_USER=gitea
-        - POSTGRES_PASSWORD=gitea
-        - POSTGRES_DB=gitea
-      networks:
-        - gitea
-      volumes:
-        - './postgres:/var/lib/postgresql/data'
+  db:
+    image: 'postgres:13'
+    restart: always
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=gitea
+      - POSTGRES_DB=gitea
+    networks:
+      - gitea
+    volumes:
+      - './postgres:/var/lib/postgresql/data'
